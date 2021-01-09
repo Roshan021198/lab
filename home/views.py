@@ -2,5 +2,5 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 # Create your views here.
-def message(request):
-    return HttpResponse("hrllo world")
+def index(request):
+    return render(request,'index.html')
