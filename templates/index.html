@@ -1,95 +1,10 @@
-<!DOCTYPE html>
+{% extends 'base.html' %}
 {% load static %}
-<html lang="en">
-
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-  <title>Fablab AIC-NITF</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
-
-  <!-- Favicons -->
-  <link href="{% static 'assets/img/aiclogo.jpg' %}" rel="icon">
-  <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-  <!-- Vendor CSS Files -->
-  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
-  <link href="{% static 'assets/vendor/icofont/icofont.min.css' %}" rel="stylesheet">
-  <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
-  <link href="{% static 'assets/vendor/venobox/venobox.css' %}" rel="stylesheet">
-  <link href="{% static 'assets/vendor/owl.carousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
-  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
-
-  <!-- Template Main CSS File -->
-  <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
-  <link href="{% static 'assets/css/news.css' %}" rel="stylesheet">
-  <link href="{% static 'assets/css/gallery.css' %}" rel="stylesheet">
 
 
 
- 
-  
-
-
-
-  <!-- =======================================================
-  * Template Name: Flexor - v2.4.0
-  * Template URL: https://bootstrapmade.com/flexor-free-multipurpose-bootstrap-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
-</head>
-
-<body>
-
-  <!-- ======= Top Bar ======= -->
-  <section id="topbar" class="d-none d-lg-block">
-    <div class="container d-flex">
-      <div class="contact-info mr-auto">
-        <ul>
-          <li><i class="icofont-envelope"></i><a href="mailto:contact@example.com">incmgr@aicnalanda.com</a></li>
-          <li><i class="icofont-phone"></i>+91-8249585065</li>
-          <li><i class="icofont-clock-time icofont-flip-horizontal"></i> Mon-Sat 10am - 5pm</li>
-        </ul>
-
-      </div>
-      <div class="cta">
-        <a href="#about" class="scrollto">Booking Now</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ======= Header ======= -->
-  <header id="header">
-    <div class="container d-flex">
-
-      <div class="logo mr-auto">
-        <h1 class="text-light"><a href="index.html"><span>Flexor</span></a></h1>
-        <!-- Uncomment below if you prefer to use an image logo -->
-        <!-- <a href="index.html"><img src="{% static 'assets/img/logo.png' %}" alt="" class="img-fluid"></a>-->
-      </div>
-
-      <nav class="nav-menu d-none d-lg-block">
-        <ul>
-          <li class="active"><a href="index.html">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#portfolio">Events</a></li>
-          <li><a href="#team">Gallery</a></li>
-          <li><a href="#pricing">Booking</a></li>
-          <li><a href="#contact">Contact</a></li>
-
-        </ul>
-      </nav><!-- .nav-menu -->
-
-    </div>
-  </header><!-- End Header -->
+  {% block body %}
+  {% load static%}
 
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
@@ -116,7 +31,7 @@
           <div class="col-xl-4 col-lg-5" data-aos="fade-up">
             <div class="content">
               <h3>Why Choose Flexor for your company website?</h3>
-              <p>
+              <p style="font-size: medium;">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 Asperiores dolores sed et. Tenetur quia eos. Autem tempore quibusdam vel necessitatibus optio ad corporis.
               </p>
@@ -157,38 +72,29 @@
       </div>
     </section><!-- End Why Us Section -->
 
-    <!-- ======= About Section ======= -->
-    <section id="about" class="about section-bg">
+    <!-- ======= Service Section ======= -->
+    <section id="services" class="about section-bg">
       <div class="container">
 
         <div class="row">
           <div class="col-xl-5 col-lg-6 video-box d-flex justify-content-center align-items-stretch" data-aos="fade-right">
             
           </div>
-
+ 
           <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
             <h4 data-aos="fade-up">OUR SERVICES</h4>
             <h3 data-aos="fade-up">Enim quis est voluptatibus aliquid consequatur fugiat</h3>
-            <p data-aos="fade-up">Esse voluptas cumque vel exercitationem. Reiciendis est hic accusamus. Non ipsam et sed minima temporibus laudantium. Soluta voluptate sed facere corporis dolores excepturi. Libero laboriosam sint et id nulla tenetur. Suscipit aut voluptate.</p>
-
+            <p data-aos="fade-up " style="font-size: medium;">Esse voluptas cumque vel exercitationem. Reiciendis est hic accusamus. Non ipsam et sed minima temporibus laudantium. Soluta voluptate sed facere corporis dolores excepturi. Libero laboriosam sint et id nulla tenetur. Suscipit aut voluptate.</p>
+            
+            {% for rs in ceategory%}
             <div class="icon-box" data-aos="fade-up">
               <div class="icon"><i class="bx bx-fingerprint"></i></div>
-              <h4 class="title"><a href="">Prototype Development Services</a></h4>
-              <p class="description">We provide turnkey prototype development services based on the requirements specified by you. </p>
+              <h4 class="title"><a href="service/{{rs.id}}">{{rs.category}}</a></h4>
+              <p class="description">{{rs.description}}</p>
             </div>
+            {% endfor %}
 
-            <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-              <div class="icon"><i class="bx bx-gift"></i></div>
-              <h4 class="title"><a href="">Machining Services</a></h4>
-              <p class="description">
-                Searching for access to advanced fabrication machines? We provide Lab-As-A-Service through which you can convert your designs into finished par</p>
-            </div>
-
-            <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
-              <div class="icon"><i class="bx bx-atom"></i></div>
-              <h4 class="title"><a href="">Fablab Installation Services</a></h4>
-              <p class="description">Are you trying to setup a Fablab for your company/institution/community? We have experience setting up 25+ Fablabs.</p>
-            </div>
+           
 
           </div>
         </div>
@@ -208,23 +114,26 @@
 
     <!-- ======= Services Section ======= -->
 
-    <section class="news container">
+    <section class="news container " id="event">
+      
       
       <div class="new-leftBox">
           <div class="new-content keveal">
               <h1>Events and News</h1>
-              <p>A Fabrication Laboratory (FabLab) is a technical prototyping 
+              <p style="font-size: medium;">A Fabrication Laboratory (FabLab) is a technical prototyping 
                   platform where people can design and build their own technology. 
                   They began as began as an outreach program from MIT‘s Center for Bits and Atoms (CBA). 
                   Fab labs aim to provide stimulus for local entrepreneurship
                   and serves as a platform for learning and innovation.
               </p>
           </div>
+          
       </div>
       
-      <div class="new-event keveal">
+      <div class="new-event keveal" style="margin-bottom: 5px;">
         
           <ul>
+            
               
               <li class="keveal">
                   <div class="new-time">
@@ -232,9 +141,8 @@
                   </div>
                   <div class="new-details">
                       <h3>Where does it come form</h3>
-                      <p>
+                      <p style="font-size: medium;">
                           people can design and build their own technology. They began as began as an 
-                         
                       </p>
                       <a href="#">View Details</a>
                   </div>
@@ -245,11 +153,9 @@
                   </div>
                   <div class="new-details">
                       <h3>Where does it come form</h3>
-                      <p>
+                      <p style="font-size: medium;">
                           people can design and build their own technology. They began as began as an 
                           outreach program from MIT‘s Center for Bits and Atoms (CBA). 
-                          Fab labs aim to provide stimulus for 
-                          local entrepreneurship and serves as a platform for learning and innovation.
                       </p>
                       <a href="#">View Details</a>
                   </div>
@@ -260,18 +166,20 @@
                 </div>
                 <div class="new-details">
                     <h3>Where does it come form</h3>
-                    <p>
+                    <p style="font-size: medium;">
                         people can design and build their own technology. They began as began as an 
                         outreach program from MIT‘s Center for Bits and Atoms (CBA). 
-                        Fab labs aim to provide stimulus for 
-                        local entrepreneurship and serves as a platform for learning and innovation.
                     </p>
                     <a href="#">View Details</a>
                 </div>
             </li>
-              
+            
+                  
           </ul>
+          
       </div>
+      
+      
   
   </section>
     
@@ -292,60 +200,20 @@
 
         <div class="owl-carousel testimonials-carousel">
 
+        {% for rs in testimonials %}
           <div class="testimonial-item">
-            <img src="{% static 'assets/img/testimonials/testimonials-1.jpg' %}" class="testimonial-img" alt="">
-            <h3>Saul Goodman</h3>
-            <h4>Ceo &amp; Founder</h4>
-            <p>
+            <img src="{{rs.image.url}}" class="testimonial-img" alt="">
+            <h3>{{rs.name}}</h3>
+            <h4>{{rs.designation}}</h4>
+            <p style="font-size: medium;">
               <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-              Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
+                 {{rs.quotes}}
               <i class="bx bxs-quote-alt-right quote-icon-right"></i>
             </p>
           </div>
+          {% endfor %}
 
-          <div class="testimonial-item">
-            <img src="{% static 'assets/img/testimonials/testimonials-2.jpg' %}" class="testimonial-img" alt="">
-            <h3>Sara Wilsson</h3>
-            <h4>Designer</h4>
-            <p>
-              <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-              Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
-              <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-            </p>
-          </div>
 
-          <div class="testimonial-item">
-            <img src="{% static 'assets/img/testimonials/testimonials-3.jpg' %}" class="testimonial-img" alt="">
-            <h3>Jena Karlis</h3>
-            <h4>Store Owner</h4>
-            <p>
-              <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-              Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
-              <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-            </p>
-          </div>
-
-          <div class="testimonial-item">
-            <img src="{% static 'assets/img/testimonials/testimonials-4.jpg' %}" class="testimonial-img" alt="">
-            <h3>Matt Brandon</h3>
-            <h4>Freelancer</h4>
-            <p>
-              <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-              Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
-              <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-            </p>
-          </div>
-
-          <div class="testimonial-item">
-            <img src="{% static 'assets/img/testimonials/testimonials-5.jpg' %}" class="testimonial-img" alt="">
-            <h3>John Larson</h3>
-            <h4>Entrepreneur</h4>
-            <p>
-              <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-              Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
-              <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-            </p>
-          </div>
 
         </div>
 
@@ -357,18 +225,13 @@
       <div class="swiper-container">
         <div class="section-title container">
           <h2 data-aos="fade-up">Gallery</h2>
-          <p data-aos="fade-up">Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <p  style="font-size: medium;" data-aos="fade-up">Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
         </div>
         <div class="swiper-wrapper ">
-          <div class="swiper-slide" style="background-image:url({% static 'assets/img/testimonials/testimonials-1.jpg' %})" ></div>
-          <div class="swiper-slide" style="background-image:url({% static 'assets/img/testimonials/testimonials-2.jpg' %})"></div>
-          <div class="swiper-slide" style="background-image:url({% static 'assets/img/testimonials/testimonials-3.jpg' %})"></div>
-          <div class="swiper-slide" style="background-image:url({% static 'assets/img/testimonials/testimonials-1.jpg' %})"></div>
-          <div class="swiper-slide" style="background-image:url({% static 'assets/img/testimonials/testimonials-2.jpg' %})"></div>
-          <div class="swiper-slide" style="background-image:url({% static 'assets/img/testimonials/testimonials-3.jpg' %})"></div>
-          <div class="swiper-slide" style="background-image:url({% static 'assets/img/testimonials/testimonials-1.jpg' %})"></div>
-          <div class="swiper-slide" style="background-image:url({% static 'assets/img/testimonials/testimonials-2.jpg' %})"></div>
-
+          {% for rs in gallery %}
+          <div class="swiper-slide" style="background-image:url({{rs.gallery_image.url}});background-position : center; background-size :cover;background-repeat : no-repeat;" ></div>
+          
+          {% endfor %}
         </div>
         <!-- Add Pagination -->
         <div class="swiper-pagination"></div>
@@ -402,175 +265,48 @@
     <!-- ======= Team Section ======= -->
     <section id="team" class="team section-bg">
       <div class="container">
-
         <div class="section-title">
           <h2 data-aos="fade-up">Team</h2>
-          <p data-aos="fade-up">Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <p style="font-size: medium;" data-aos="fade-up">Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
         </div>
-
-        <div class="row">
-
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up">
-            <div class="member">
-              <div class="member-img">
-                <img src="{% static 'assets/img/team/team-1.jpg' %}" class="img-fluid" alt="">
-                <div class="social">
-                  <a href=""><i class="icofont-twitter"></i></a>
-                  <a href=""><i class="icofont-facebook"></i></a>
-                  <a href=""><i class="icofont-instagram"></i></a>
-                  <a href=""><i class="icofont-linkedin"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>Walter White</h4>
-                <span>Chief Executive Officer</span>
-              </div>
+    <div class="carousel" data-flickity='{ "groupCells": true ,"autoPlay": true ,"prevNextButtons": false, "pageDots": false } '>
+      {% for rs in team %}
+      <div class="col-lg-3 col-md-6 d-flex align-items-stretch " data-aos="fade-up" >
+        <div class="member">
+          <div class="member-img">
+            <img src="{{rs.image.url}}" class="img-fluid" alt="" >            
+            <div class="social">
+              <a href=""><i class="icofont-twitter"></i></a>
+              <a href=""><i class="icofont-facebook"></i></a>
+              <a href=""><i class="icofont-instagram"></i></a>
+              <a href=""><i class="icofont-linkedin"></i></a>
             </div>
           </div>
-
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
-            <div class="member">
-              <div class="member-img">
-                <img src="{% static 'assets/img/team/team-2.jpg' %}" class="img-fluid" alt="">
-                <div class="social">
-                  <a href=""><i class="icofont-twitter"></i></a>
-                  <a href=""><i class="icofont-facebook"></i></a>
-                  <a href=""><i class="icofont-instagram"></i></a>
-                  <a href=""><i class="icofont-linkedin"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>Sarah Jhonson</h4>
-                <span>Product Manager</span>
-              </div>
-            </div>
+          <div class="member-info">
+            <h4>{{rs.name}}</h4>
+            <span>{{rs.designation}}</span>
           </div>
-
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-            <div class="member">
-              <div class="member-img">
-                <img src="{% static 'assets/img/team/team-3.jpg' %}" class="img-fluid" alt="">
-                <div class="social">
-                  <a href=""><i class="icofont-twitter"></i></a>
-                  <a href=""><i class="icofont-facebook"></i></a>
-                  <a href=""><i class="icofont-instagram"></i></a>
-                  <a href=""><i class="icofont-linkedin"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>William Anderson</h4>
-                <span>CTO</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
-            <div class="member">
-              <div class="member-img">
-                <img src="{% static 'assets/img/team/team-4.jpg' %}" class="img-fluid" alt="">
-                <div class="social">
-                  <a href=""><i class="icofont-twitter"></i></a>
-                  <a href=""><i class="icofont-facebook"></i></a>
-                  <a href=""><i class="icofont-instagram"></i></a>
-                  <a href=""><i class="icofont-linkedin"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>Amanda Jepson</h4>
-                <span>Accountant</span>
-              </div>
-            </div>
-          </div>
-
         </div>
-
       </div>
-    </section><!-- End Team Section -->
+      
+
+      {% endfor %}
+  
+     
+     
+     
+  
+      
+  
+      
+      
+   
+    </div>
+    </div>
+  </section>
 
     <!-- ======= Pricing Section ======= -->
-    <section id="pricing" class="pricing">
-      <div class="container">
-
-        <div class="section-title">
-          <h2 data-aos="fade-up">Pricing</h2>
-          <p data-aos="fade-up">Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
-        </div>
-
-        <div class="row">
-
-          <div class="col-lg-3 col-md-6" data-aos="fade-up">
-            <div class="box">
-              <h3>Free</h3>
-              <h4><sup>$</sup>0<span> / month</span></h4>
-              <ul>
-                <li>Aida dere</li>
-                <li>Nec feugiat nisl</li>
-                <li>Nulla at volutpat dola</li>
-                <li class="na">Pharetra massa</li>
-                <li class="na">Massa ultricies mi</li>
-              </ul>
-              <div class="btn-wrap">
-                <a href="#" class="btn-buy">Buy Now</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 mt-4 mt-md-0" data-aos="fade-up" data-aos-delay="100">
-            <div class="box featured">
-              <h3>Business</h3>
-              <h4><sup>$</sup>19<span> / month</span></h4>
-              <ul>
-                <li>Aida dere</li>
-                <li>Nec feugiat nisl</li>
-                <li>Nulla at volutpat dola</li>
-                <li>Pharetra massa</li>
-                <li class="na">Massa ultricies mi</li>
-              </ul>
-              <div class="btn-wrap">
-                <a href="#" class="btn-buy">Buy Now</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="200">
-            <div class="box">
-              <h3>Developer</h3>
-              <h4><sup>$</sup>29<span> / month</span></h4>
-              <ul>
-                <li>Aida dere</li>
-                <li>Nec feugiat nisl</li>
-                <li>Nulla at volutpat dola</li>
-                <li>Pharetra massa</li>
-                <li>Massa ultricies mi</li>
-              </ul>
-              <div class="btn-wrap">
-                <a href="#" class="btn-buy">Buy Now</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="300">
-            <div class="box">
-              <span class="advanced">Advanced</span>
-              <h3>Ultimate</h3>
-              <h4><sup>$</sup>49<span> / month</span></h4>
-              <ul>
-                <li>Aida dere</li>
-                <li>Nec feugiat nisl</li>
-                <li>Nulla at volutpat dola</li>
-                <li>Pharetra massa</li>
-                <li>Massa ultricies mi</li>
-              </ul>
-              <div class="btn-wrap">
-                <a href="#" class="btn-buy">Buy Now</a>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section><!-- End Pricing Section -->
+ 
 
 
 
@@ -580,7 +316,7 @@
 
         <div class="section-title">
           <h2 data-aos="fade-up">Contact</h2>
-          <p data-aos="fade-up">Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <p style="font-size: medium;" data-aos="fade-up">Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
         </div>
 
         <div class="row justify-content-center">
@@ -611,7 +347,8 @@
 
         <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="300">
           <div class="col-xl-9 col-lg-12 mt-4">
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+            <form action="{% url 'index' %}" method="post" role="form" class="php-email-form">
+              {% csrf_token %}
               <div class="form-row">
                 <div class="col-md-6 form-group">
                   <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
@@ -630,12 +367,8 @@
                 <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
                 <div class="validate"></div>
               </div>
-              <div class="mb-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-              </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
+              
+              <div class="text-center"><button type="submit" >Send Message</button></div>
             </form>
           </div>
 
@@ -646,101 +379,4 @@
 
   </main><!-- End #main -->
 
-  <!-- ======= Footer ======= -->
-  <footer id="footer">
-
-    <div class="footer-top">
-      <div class="container">
-        <div class="row">
-
-          <div class="col-lg-3 col-md-6 footer-contact">
-            <h3>Flexor</h3>
-            <p>
-              A108 Adam Street <br>
-              New York, NY 535022<br>
-              United States <br><br>
-              <strong>Phone:</strong> +1 5589 55488 55<br>
-              <strong>Email:</strong> info@example.com<br>
-            </p>
-          </div>
-
-          <div class="col-lg-2 col-md-6 footer-links">
-            <h4>Useful Links</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
-            </ul>
-          </div>
-
-          <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Our Services</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
-            </ul>
-          </div>
-
-          <div class="col-lg-4 col-md-6 footer-newsletter">
-            <h4>Join Our Newsletter</h4>
-            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
-            <form action="" method="post">
-              <input type="email" name="email"><input type="submit" value="Subscribe">
-            </form>
-          </div>
-
-        </div>
-      </div>
-    </div>
-
-    <div class="container d-lg-flex py-4">
-
-      <div class="mr-lg-auto text-center text-lg-left">
-        <div class="copyright">
-          &copy; Copyright <strong><span>Flexor</span></strong>. All Rights Reserved
-        </div>
-        <div class="credits">
-          <!-- All the links in the footer should remain intact. -->
-          <!-- You can delete the links only if you purchased the pro version. -->
-          <!-- Licensing information: https://bootstrapmade.com/license/ -->
-          <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/flexor-free-multipurpose-bootstrap-template/ -->
-          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-        </div>
-      </div>
-      <div class="social-links text-center text-lg-right pt-3 pt-lg-0">
-        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-        <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-      </div>
-    </div>
-  </footer><!-- End Footer -->
-
-  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
-
-  <!-- Vendor JS Files -->
-  <script src="{% static 'assets/vendor/jquery/jquery.min.js' %}"></script>
-  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
-  <script src="{% static 'assets/vendor/jquery.easing/jquery.easing.min.js' %}"></script>
-  <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
-  <script src="{% static 'assets/vendor/jquery-sticky/jquery.sticky.js' %}"></script>
-  <script src="{% static 'assets/vendor/venobox/venobox.min.js' %}"></script>
-  <script src="{% static 'assets/vendor/owl.carousel/owl.carousel.min.js' %}"></script>
-  <script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
-  <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
-  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-
-  <!-- Template Main JS File -->
-  <script src="{% static 'assets/js/main.js' %}"></script>
-  <script src="{% static 'assets/js/news.js' %}"></script>
-  <script src="{% static 'assets/js/gellery.js' %}"></script>
-
-</body>
-
-</html>
+  {% endblock body %}

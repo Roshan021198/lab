@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+  {% block body %}
+  {% load static%}
+    <section class="body">
+        <header class="service-header">
+        <h1 class="text1"><span class="text">{{ct}}</span> Services</h1>
+        <p style="font-size: medium;">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi, aliquid.</p>
+        </header>
+
+        <main class="container">
+            {% for prod in products%}
+            <section class="machine-card" data-aos="fade-right">
+                <img src="{{prod.productimage.url}}" class="machine-photo">
+                <div style="margin-left:2rem">
+                    <h3 class="cate">{{prod.productname}}</h3>
+                    <P>
+                        {{prod.productdescription}}
+                    </P>
+                    <a href="#" class="machine-btn">BOOK NOW</a>
+                </div>
+
+            </section>
+            {% endfor %}
+
+        </main>
+
+    </section>
+    {% endblock body %}
