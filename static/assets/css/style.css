@@ -375,7 +375,7 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   z-index: 1;
   padding: 0;
-  margin-bottom: -120px;
+  
 }
 #myvideo{
   position: absolute;
@@ -383,14 +383,16 @@ h1, h2, h3, h4, h5, h6 {
   bottom: 0;
   min-width: 100%;
   min-height: 100%;
+  margin-bottom: -120px;
 }
 
 #hero:before,
 #myvideo:before {
   content: "";
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.5);
   position: absolute;
   bottom: 0;
+  z-index: 1;
   top: 0;
   left: 0;
   right: 0;
@@ -407,7 +409,10 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 56px;
   color: #fff;
 }
-
+#hero > div > h1 > span
+{
+  color: #FF6A3A;
+}
 #hero h2 {
   color: #eee;
   margin-bottom: 50px;
@@ -889,6 +894,89 @@ section {
   line-height: 24px;
   font-size: 14px;
 }
+.about-boxes {
+  background: url("../img/about-boxes-bg.jpg") center top no-repeat fixed;
+  background-size: cover;
+  padding: 60px 0 30px 0;
+  position: relative;
+}
+
+.about-boxes::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.92);
+  z-index: 9;
+}
+
+.about-boxes .container, .about-boxes .container-fluid {
+  position: relative;
+  z-index: 10;
+}
+
+.about-boxes .card {
+  border-radius: 3px;
+  border: 0;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+
+}
+
+.about-boxes .card-icon {
+  text-align: center;
+  margin-top: -32px;
+}
+
+.about-boxes .card-icon i {
+  font-size: 32px;
+  color: #fff;
+  width: 50px;
+  height: 64px;
+  padding-top: 5px;
+  text-align: center;
+  background-color: #ff4a17;
+  border-radius: 4px;
+  text-align: center;
+  border: 4px solid #fff;
+  transition: 0.3s;
+  display: inline-block;
+}
+
+.about-boxes .card-body {
+  padding-top: 12px;
+}
+
+.about-boxes .card-title {
+  font-weight: 700;
+  text-align: center;
+}
+
+.about-boxes .card-title a {
+  color: #15222b;
+}
+
+.about-boxes .card-title a:hover {
+  color: #ff4a17;
+}
+
+.about-boxes .card-text {
+  color: #5e5e5e;
+}
+
+.about-boxes .card:hover .card-icon i {
+  background: #fff;
+  color: #ff4a17;
+}
+
+@media (max-width: 1024px) {
+  .about-boxes {
+    background-attachment: scroll;
+  }
+}
+
 
 /*--------------------------------------------------------------
 # Values
@@ -1544,12 +1632,12 @@ section {
   margin: 0 0 0 68px;
 }
 
-.contact .php-email-form {
+.contact .email-form {
   box-shadow: 0 0 30px rgba(214, 215, 216, 0.6);
   padding: 30px;
 }
 
-.contact .php-email-form .validate {
+.contact .email-form .validate {
   display: none;
   color: red;
   margin: 0 0 15px 0;
@@ -1557,7 +1645,7 @@ section {
   font-size: 13px;
 }
 
-.contact .php-email-form .error-message {
+.contact .email-form .error-message {
   display: none;
   color: #fff;
   background: #ed3c0d;
@@ -1566,11 +1654,11 @@ section {
   font-weight: 600;
 }
 
-.contact .php-email-form .error-message br + br {
+.contact .email-form .error-message br + br {
   margin-top: 25px;
 }
 
-.contact .php-email-form .sent-message {
+.contact .email-form .sent-message {
   display: none;
   color: #fff;
   background: #18d26e;
@@ -1579,14 +1667,14 @@ section {
   font-weight: 600;
 }
 
-.contact .php-email-form .loading {
+.contact .email-form .loading {
   display: none;
   background: #fff;
   text-align: center;
   padding: 15px;
 }
 
-.contact .php-email-form .loading:before {
+.contact .email-form .loading:before {
   content: "";
   display: inline-block;
   border-radius: 50%;
@@ -1599,25 +1687,25 @@ section {
   animation: animate-loading 1s linear infinite;
 }
 
-.contact .php-email-form input, .contact .php-email-form textarea {
+.contact .email-form input, .contact .email-form textarea {
   border-radius: 0;
   box-shadow: none;
   font-size: 14px;
 }
 
-.contact .php-email-form input::focus, .contact .php-email-form textarea::focus {
+.contact .email-form input::focus, .contact .email-form textarea::focus {
   background-color: #ff5821;
 }
 
-.contact .php-email-form input {
+.contact .email-form input {
   padding: 20px 15px;
 }
 
-.contact .php-email-form textarea {
+.contact .email-form textarea {
   padding: 12px 15px;
 }
 
-.contact .php-email-form button[type="submit"] {
+.contact .email-form button[type="submit"] {
   background: #ff5821;
   border: 0;
   padding: 10px 24px;
@@ -1625,7 +1713,7 @@ section {
   transition: 0.4s;
 }
 
-.contact .php-email-form button[type="submit"]:hover {
+.contact .email-form button[type="submit"]:hover {
   background: #ff7e54;
 }
 
