@@ -1,6 +1,6 @@
 from django.contrib import admin
-from .models import Gallery,Team,Testimonials,Ceategory,ServiceProduct
-from mptt.admin import DraggableMPTTAdmin
+
+from .models import Gallery,Team,Testimonials,Ceategory,ServiceProduct,Message,News
 
 
 # Register your models he
@@ -21,4 +21,5 @@ admin.site.register(Team)
 admin.site.register(Testimonials)
 admin.site.register(Ceategory)
 admin.site.register(ServiceProduct,ServiceProductAdmin)
-
+admin.site.register(Message)
+admin.site.register(News)

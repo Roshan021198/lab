@@ -9,14 +9,15 @@
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
     <video autoplay muted loop id="myvideo">
-      <source src="{% static 'assets/video/promo.mp4' %}" type="video/mp4">
+      <source src="{% static 'assets/video/bg video.mp4' %}" type="video/mp4">
     </video>
     <div class="container" data-aos="fade-in">
-      <h1>Welcome to AIC-NITF FABLAB</h1>
+      <h1 style="display: inline-block;">Welcome to <span class="typewrite" data-period="1800"
+          data-type='[ " FabLab", " AIC-NITF"]'></span> </h1>
       <h2>We are team of talanted designers making websites with Bootstrap</h2>
       <div class="d-flex align-items-center">
         <i class="bx bxs-right-arrow-alt get-started-icon"></i>
-        <a href="#about" class="btn-get-started scrollto">Get Started</a>
+        <a href="{% url 'about' %}" class="btn-get-started scrollto">Get Started</a>
       </div>
     </div>
   </section><!-- End Hero -->
@@ -31,9 +32,11 @@
           <div class="col-xl-4 col-lg-5" data-aos="fade-up">
             <div class="content">
               <h3>Why Choose Flexor for your company website?</h3>
-              <p style="font-size: medium;">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                Asperiores dolores sed et. Tenetur quia eos. Autem tempore quibusdam vel necessitatibus optio ad corporis.
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua.
+                Asperiores dolores sed et. Tenetur quia eos. Autem tempore quibusdam vel necessitatibus optio ad
+                corporis.
               </p>
               <div class="text-center">
                 <a href="#" class="more-btn">Learn More <i class="bx bx-chevron-right"></i></a>
@@ -88,17 +91,13 @@
             
             {% for rs in ceategory%}
             <div class="icon-box" data-aos="fade-up">
-              <div class="icon"><i class="bx bx-fingerprint"></i></div>
+              <div class="icon"><i class="{{rs.icon}}"></i></div>
               <h4 class="title"><a href="service/{{rs.id}}">{{rs.category}}</a></h4>
               <p class="description">{{rs.description}}</p>
             </div>
             {% endfor %}
-
-           
-
           </div>
         </div>
-
       </div>
     </section><!-- End About Section -->
 
@@ -114,85 +113,53 @@
 
     <!-- ======= Services Section ======= -->
 
-    <section class="news container " id="event">
-      
-      
-      <div class="new-leftBox">
-          <div class="new-content keveal">
-              <h1>Events and News</h1>
-              <p style="font-size: medium;">A Fabrication Laboratory (FabLab) is a technical prototyping 
-                  platform where people can design and build their own technology. 
-                  They began as began as an outreach program from MIT‘s Center for Bits and Atoms (CBA). 
-                  Fab labs aim to provide stimulus for local entrepreneurship
-                  and serves as a platform for learning and innovation.
-              </p>
+
+<section class="news container" id='event'>
+
+  <div class="new-leftBox">
+    <div class="new-content">
+      <h1>Events and News</h1>
+      <p>A Fabrication Laboratory (FabLab) is a technical prototyping
+        platform where people can design and build their own technology.
+        They began as began as an outreach program from MIT‘s Center for Bits and Atoms (CBA).
+        Fab labs aim to provide stimulus for local entrepreneurship
+        and serves as a platform for learning and innovation.
+      </p>
+    </div>
+    <a href="{% url 'blog' %}" class="machine-btn exploremore">Explore More</a>
+  </div>
+
+  <div class="new-event">
+    <div class="newsticker-jcarousellite">
+      <ul id="newsticker-demo">
+        {% for rs in news %}
+        <li class="block">
+          <div class="new-time">
+            <h2>{{rs.upcoming_date|date:"d"}}<br><span style="line-height: 2;">{{rs.upcoming_date|date:"M"}}</span></h2>
           </div>
-          
-      </div>
+          <div class="new-details">
+            <h3>{{rs.title}}</h3>
+            <p>
+              {{rs.details|striptags|truncatechars:100}}
+            </p>
+            <a href="{% url 'singleblog' id=rs.id %}">View Details</a>
+          </div>
+        </li>
+        {% endfor %}
       
-      <div class="new-event keveal" style="margin-bottom: 5px;">
-        
-          <ul>
-            
-              
-              <li class="keveal">
-                  <div class="new-time">
-                      <h2>24<br><span>June</span></h2>
-                  </div>
-                  <div class="new-details">
-                      <h3>Where does it come form</h3>
-                      <p style="font-size: medium;">
-                          people can design and build their own technology. They began as began as an 
-                      </p>
-                      <a href="#">View Details</a>
-                  </div>
-              </li>
-              <li class="keveal">
-                  <div class="new-time">
-                      <h2>24<br><span>June</span></h2>
-                  </div>
-                  <div class="new-details">
-                      <h3>Where does it come form</h3>
-                      <p style="font-size: medium;">
-                          people can design and build their own technology. They began as began as an 
-                          outreach program from MIT‘s Center for Bits and Atoms (CBA). 
-                      </p>
-                      <a href="#">View Details</a>
-                  </div>
-              </li>
-              <li class="keveal">
-                <div class="new-time">
-                    <h2>24<br><span>June</span></h2>
-                </div>
-                <div class="new-details">
-                    <h3>Where does it come form</h3>
-                    <p style="font-size: medium;">
-                        people can design and build their own technology. They began as began as an 
-                        outreach program from MIT‘s Center for Bits and Atoms (CBA). 
-                    </p>
-                    <a href="#">View Details</a>
-                </div>
-            </li>
-            
-                  
-          </ul>
-          
-      </div>
-      
-      
-  
-  </section>
-    
-        <!-- ======= Values Section ======= -->
-    <section id="values" class="values">
-      <div class="container">
+      </ul>
+    </div>
+  </div>
 
-        <div class="row">
-       
-        </div>
+</section><!-- End Values Section -->
+<section id="clients" class="clients">
+  <div class="container" data-aos="fade-up">
 
-      </div>
-    </section><!-- End Values Section -->
+    <div class="owl-carousel clients-carousel">
+    </div>
+
+  </div>
+</section><!-- End Clients Section -->
 
     <!-- ======= Testimonials Section ======= -->
     <section id="testimonials" class="testimonials">
@@ -214,7 +181,6 @@
           {% endfor %}
 
 
-
         </div>
 
       </div>
@@ -229,13 +195,16 @@
         </div>
         <div class="swiper-wrapper ">
           {% for rs in gallery %}
-          <div class="swiper-slide" style="background-image:url({{rs.gallery_image.url}});background-position : center; background-size :cover;background-repeat : no-repeat;" ></div>
+          <div class="swiper-slide" style="background-image:url({{rs.gallery_image.url}});background-position : center; background-size :cover;background-repeat : no-repeat;" >
+
+          </div>
           
           {% endfor %}
         </div>
         <!-- Add Pagination -->
         <div class="swiper-pagination"></div>
       </div>
+      
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script>
         var swiper = new Swiper('.swiper-container', {
@@ -244,11 +213,11 @@
           centeredSlides: true,
           slidesPerView: 'auto',
           coverflowEffect: {
-            rotate: 20,
-            stretch: 0,
-            depth: 200,
-            modifier: 1,
-            slideShadows: true,
+          rotate: 20,
+          stretch: 0,
+          depth: 200,
+          modifier: 1,
+          slideShadows: true,
           },
           loop:true,
           autoplay:{
@@ -276,10 +245,10 @@
           <div class="member-img">
             <img src="{{rs.image.url}}" class="img-fluid" alt="" >            
             <div class="social">
-              <a href=""><i class="icofont-twitter"></i></a>
-              <a href=""><i class="icofont-facebook"></i></a>
-              <a href=""><i class="icofont-instagram"></i></a>
-              <a href=""><i class="icofont-linkedin"></i></a>
+              <a href="{{rs.twiterlink}}"><i class="icofont-twitter"></i></a>
+              <a href="{{rs.facebooklink}}"><i class="icofont-facebook"></i></a>
+              <a href="{{rs.instalink}}"><i class="icofont-instagram"></i></a>
+              <a href="{{rs.linkdnlink}}"><i class="icofont-linkedin"></i></a>
             </div>
           </div>
           <div class="member-info">
@@ -309,14 +278,15 @@
  
 
 
-
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">
       <div class="container">
 
         <div class="section-title">
           <h2 data-aos="fade-up">Contact</h2>
-          <p style="font-size: medium;" data-aos="fade-up">Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <p data-aos="fade-up">Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum
+            quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias
+            ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
         </div>
 
         <div class="row justify-content-center">
@@ -325,7 +295,11 @@
             <div class="info-box">
               <i class="bx bx-map"></i>
               <h3>Our Address</h3>
-              <p>A108 Adam Street, New York, NY 535022</p>
+              <p>AIC-NITF,
+                Buddhist Villa, Chandaka Bhubaneswar,
+                Odisha-754005
+                
+                </p>
             </div>
           </div>
 
@@ -333,42 +307,49 @@
             <div class="info-box">
               <i class="bx bx-envelope"></i>
               <h3>Email Us</h3>
-              <p>info@example.com<br>contact@example.com</p>
+              <p>incmgr@aicnalanda.com<br></p>
             </div>
           </div>
           <div class="col-xl-3 col-lg-4 mt-4" data-aos="fade-up" data-aos-delay="200">
             <div class="info-box">
               <i class="bx bx-phone-call"></i>
               <h3>Call Us</h3>
-              <p>+1 5589 55488 55<br>+1 6678 254445 41</p>
+              <p>+91-8249585065<br></p>
             </div>
           </div>
         </div>
 
         <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="300">
           <div class="col-xl-9 col-lg-12 mt-4">
-            <form action="{% url 'index' %}" method="post" role="form" class="php-email-form">
-              {% csrf_token %}
+            <form action="{% url 'contact_message' %}" method="post" role="form" class="email-form">{% csrf_token %}
               <div class="form-row">
                 <div class="col-md-6 form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name"
+                    data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
                   <div class="validate"></div>
                 </div>
                 <div class="col-md-6 form-group">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email"
+                    data-rule="email" data-msg="Please enter a valid email" />
                   <div class="validate"></div>
                 </div>
               </div>
               <div class="form-group">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject"
+                  data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
                 <div class="validate"></div>
               </div>
               <div class="form-group">
-                <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+                <textarea class="form-control" name="message" rows="5" data-rule="required"
+                  data-msg="Please write something for us" placeholder="Message"></textarea>
                 <div class="validate"></div>
               </div>
-              
-              <div class="text-center"><button type="submit" >Send Message</button></div>
+              <!-- <div class="mb-3">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+              </div> -->
+              <div class="text-center"><button type="submit">Send Message</button></div>
             </form>
           </div>
 

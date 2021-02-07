@@ -372,12 +372,12 @@ h1, h2, h3, h4, h5, h6 {
 #hero {
   width: 100%;
   height: 60vh;
-  background: url("../img/hero-bg.jpg") center center;
+  background: url("../img/testimonibg.jpg") center center;
   background-size: cover;
   position: relative;
   z-index: 1;
   padding: 0;
-  margin-bottom: -120px;
+  
 }
 #myvideo{
   position: absolute;
@@ -385,14 +385,16 @@ h1, h2, h3, h4, h5, h6 {
   bottom: 0;
   min-width: 100%;
   min-height: 100%;
+  margin-bottom: -120px;
 }
 
 #hero:before,
 #myvideo:before {
   content: "";
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.5);
   position: absolute;
   bottom: 0;
+  z-index: 1;
   top: 0;
   left: 0;
   right: 0;
@@ -409,7 +411,10 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 56px;
   color: #fff;
 }
-
+#hero > div > h1 > span
+{
+  color: #FF6A3A;
+}
 #hero h2 {
   color: #eee;
   margin-bottom: 50px;
@@ -685,7 +690,7 @@ section {
 }
 
 .about .video-box {
-  background: url("../img/about-img.jpg") center center no-repeat;
+  background: url("../img/about-bg.jpg") center center no-repeat;
   background-size: cover;
   min-height: 500px;
 }
@@ -892,7 +897,7 @@ section {
   font-size: 14px;
 }
 .about-boxes {
-  background: url("../img/about-boxes-bg.jpg") center top no-repeat fixed;
+  background: url("../img/testimonibg.jpg.jpg") center top no-repeat fixed;
   background-size: cover;
   padding: 60px 0 30px 0;
   position: relative;
@@ -1037,9 +1042,9 @@ section {
 --------------------------------------------------------------*/
 .testimonials {
   padding: 80px 0;
-  background: url("../img/testimonials-bg.jpg") no-repeat;
+  background: url("../img/testy.jpg") no-repeat;
   background-position: center center;
-  background-size: cover;
+  background-size:cover;
   position: relative;
 }
 
@@ -1629,12 +1634,12 @@ section {
   margin: 0 0 0 68px;
 }
 
-.contact .php-email-form {
+.contact .email-form {
   box-shadow: 0 0 30px rgba(214, 215, 216, 0.6);
   padding: 30px;
 }
 
-.contact .php-email-form .validate {
+.contact .email-form .validate {
   display: none;
   color: red;
   margin: 0 0 15px 0;
@@ -1642,7 +1647,7 @@ section {
   font-size: 13px;
 }
 
-.contact .php-email-form .error-message {
+.contact .email-form .error-message {
   display: none;
   color: #fff;
   background: #ed3c0d;
@@ -1651,11 +1656,11 @@ section {
   font-weight: 600;
 }
 
-.contact .php-email-form .error-message br + br {
+.contact .email-form .error-message br + br {
   margin-top: 25px;
 }
 
-.contact .php-email-form .sent-message {
+.contact .email-form .sent-message {
   display: none;
   color: #fff;
   background: #18d26e;
@@ -1664,14 +1669,14 @@ section {
   font-weight: 600;
 }
 
-.contact .php-email-form .loading {
+.contact .email-form .loading {
   display: none;
   background: #fff;
   text-align: center;
   padding: 15px;
 }
 
-.contact .php-email-form .loading:before {
+.contact .email-form .loading:before {
   content: "";
   display: inline-block;
   border-radius: 50%;
@@ -1684,25 +1689,25 @@ section {
   animation: animate-loading 1s linear infinite;
 }
 
-.contact .php-email-form input, .contact .php-email-form textarea {
+.contact .email-form input, .contact .email-form textarea {
   border-radius: 0;
   box-shadow: none;
   font-size: 14px;
 }
 
-.contact .php-email-form input::focus, .contact .php-email-form textarea::focus {
+.contact .email-form input::focus, .contact .email-form textarea::focus {
   background-color: #ff5821;
 }
 
-.contact .php-email-form input {
+.contact .email-form input {
   padding: 20px 15px;
 }
 
-.contact .php-email-form textarea {
+.contact .email-form textarea {
   padding: 12px 15px;
 }
 
-.contact .php-email-form button[type="submit"] {
+.contact .email-form button[type="submit"] {
   background: #ff5821;
   border: 0;
   padding: 10px 24px;
@@ -1710,7 +1715,7 @@ section {
   transition: 0.4s;
 }
 
-.contact .php-email-form button[type="submit"]:hover {
+.contact .email-form button[type="submit"]:hover {
   background: #ff7e54;
 }
 
@@ -2416,4 +2421,24 @@ section {
   background: #ff7e54;
   color: #fff;
   text-decoration: none;
+}
+
+
+
+.whatsapp{
+  position:fixed;
+  right: 0px;
+  top:80%;
+  right: 12px;
+  z-index: 10;
+  
+  
+
+}
+.whatsapp h5{
+  color:white;
+  background: #20b20f;
+  padding: 12px;
+  border-radius: 15px;
+  font-size: x-large;
 }

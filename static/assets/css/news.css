@@ -1,4 +1,4 @@
-body {
+.body {
     margin: 0;
     padding: 0;
     
@@ -6,7 +6,7 @@ body {
     color: #313030;
   }
 .news{
-    width: 100%;
+    width: auto;
     height: 130vh;
     background:  #ffcbba;
     background-size: cover;
@@ -118,7 +118,7 @@ body {
     position: relative;
     margin: 10px 0 0;
     padding: 0;
-    font-size: 20px;
+    font-size: 16px;
 }
 .news .new-event ul li .new-details a{
     display: inline-block;
@@ -144,6 +144,9 @@ body {
         background-position: center;
         background:  #ffcbba;
 
+    }
+    .exploremore{
+        position: relative;
     }
     .news .new-leftBox{
         width: 100%;
