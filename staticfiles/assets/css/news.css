@@ -1,0 +1,227 @@
+.body {
+    margin: 0;
+    padding: 0;
+    
+    font-family: "Open Sans", sans-serif;
+    color: #313030;
+  }
+.news{
+    width: auto;
+    height: 130vh;
+    background:  #ffcbba;
+    background-size: cover;
+    
+}
+.news .new-leftBox{
+    width: 50%;
+    height: 100%;
+    float: left;
+    padding: 50px;
+    box-sizing: border-box;
+}
+.news .new-leftBox .new-content{
+    color: #fff;
+    background:rgba(0,0,0,.5);
+    padding: 40px;
+    transition: .5s;
+}
+.news .new-leftBox .new-content:hover{
+
+    background: #ff5821;
+    
+}
+.news .new-leftBox .new-content h1{
+    
+ margin: 0;
+ padding: 0;
+ font-size: 40px;
+ text-transform: uppercase;
+}
+.news .new-leftBox .new-content p{
+    
+    margin: 10px 0 0;
+    padding: 0;
+    
+}
+.news .new-event{
+    position: relative;
+    width: 50%;
+    height: 100%;
+    background:rgba(0,0,0,.5);
+    float:right;
+    box-sizing: border-box;
+    
+
+}
+.news .new-event ul{
+    position: absolute;
+    top:50%;
+    transform: translateY(-50%);
+    margin: 0;
+    padding: 40;
+    box-sizing: border-box;
+}
+.news .new-event ul li{
+    list-style-type: none;
+    background:#fff;
+    box-sizing: border-box;
+    height: 300px;
+    margin: 15px 0;
+    margin-right: 20px;
+    box-shadow: 5px 10px 8px #ff5821;
+}
+.news .new-event ul li .new-time{
+    position: relative;
+    padding: 20px;
+    background: #262626;
+    box-sizing: border-box;
+    width: 30%;
+    height: 100%;
+    float: left;
+    text-align: center;
+    transition: .5s;
+    
+
+}
+.news .new-event ul li .new-time:hover{
+    background: #ff5821;
+
+}
+.news .new-event ul li .new-time h2{
+    position: relative;
+    margin: 0;
+    padding: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: #fff;
+    font-size: 60px;
+    line-height: 30px;
+}
+.news .new-event ul li .new-time h2 span{
+    font-size: 30px;
+}
+.news .new-event ul li .new-details{
+    padding: 20px;
+    background:  #fff;
+    box-sizing: border-box;
+    width: 70%;
+    float: left;
+}
+.news .new-event ul li .new-details h3{
+    position: relative;
+    margin: 0;
+    padding: 0;
+    font-size: 22px;
+}
+.news .new-event ul li .new-details p{
+    position: relative;
+    margin: 10px 0 0;
+    padding: 0;
+    font-size: 16px;
+}
+.news .new-event ul li .new-details a{
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px 15px;
+    border: 2px solid #ff5821;
+    margin-top: 15px;
+    font-size: 18px;
+    transition: .5s;
+    color: #000;
+    
+
+}
+.news .new-event ul li .new-details a:hover{
+    background: #ff5821;
+    color: #fff;
+
+}
+@media (max-width:991px)
+{
+    .news{
+        height:100%;
+        background-position: center;
+        background:  #ffcbba;
+
+    }
+    .exploremore{
+        position: relative;
+    }
+    .news .new-leftBox{
+        width: 100%;
+        height: auto;
+        float: none;
+        padding: 20px;
+       
+    }
+    .news .new-leftBox .new-content{
+        padding: 20px;
+    }
+    .news .new-leftBox .new-content h1{
+        font-size: 30px;
+    }
+    .news .new-event{
+        height: auto;
+        width: 100%;
+        background: transparent;
+        float: none;
+        box-sizing: border-box;
+    }
+    .news .new-event ul{
+        position: relative;
+        transform: translateY(0px);
+        padding: 0 20px 20px;
+    }
+    .news .new-event ul li{
+        height: auto;
+        box-shadow: 5px 10px 8px #ff5821;;
+    }
+    .news .new-event ul li .new-time{
+        width: 80px;
+        height: 80px;
+        padding: 0;
+    }
+    .news .new-event ul li .new-time h2{
+        font-size: 30px;
+        line-height: 24px;
+    }
+    .news .new-event ul li .new-time h2 span{
+        font-size: 20px;
+
+    }
+    .news .new-event ul li .new-details{
+        width: 100%;
+        float: none;
+        padding-left:100px;
+        background: transparent;
+
+    }
+    .news .new-event ul li .new-details a{
+        padding: 5px 10px;
+
+        
+
+    }
+
+}
+.keveal{
+    position: relative;
+    transform: translateY(150px);
+    opacity: 0;
+    transition: all 1s ease;
+}
+.keveal.active{
+
+    transform: translateY(0px);
+    opacity: 1;
+}
+
+@media (min-width:1024px){
+    .exploremore{
+        position: relative;
+        bottom: 30rem;
+        left: 3.5rem;
+    }
+}
+
