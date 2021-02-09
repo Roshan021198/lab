@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+  {% block body %}
+  {% load static%}
+
+
+  <section id="blog" class="blog">
+    <div class="container">
+
+      <div class="row">
+          {% for rs in news %}
+
+        <div class="col-lg-4  col-md-6 d-flex align-items-stretch" data-aos="fade-up">
+          <article class="entry">
+
+            <div class="entry-img">
+              <img src="{{rs.image.url}}" alt="" class="img-fluid" style="background-size :100%; height:400px;width:fit-content">
+            </div>
+
+            <h2 class="entry-title">
+              <a href="{% url 'singleblog' id=rs.id %}">{{rs.title}}</a>
+            </h2>
+
+            <div class="entry-meta">
+              <ul>
+                <li class="d-flex align-items-center"><i class="icofont-wall-clock"></i> <a href="{% url 'singleblog' id=rs.id %}"><time datetime="2020-01-01">{{rs.upcoming_date|date:"M"}}  {{rs.upcoming_date|date:"d"}}, {{rs.upcoming_date|date:"Y"}}</time></a></li>
+              </ul>
+            </div>
+
+            <div class="entry-content">
+              <p>
+                {{rs.details|striptags|truncatechars:100}}
+              </p>
+              <div class="read-more">
+                <a href="{% url 'singleblog' id=rs.id %}">Read More</a>
+              </div>
+            </div>
+
+          </article><!-- End blog entry -->
+        </div>
+        {% endfor %}
+
+
+
+      </div>
+
+      <div class="blog-pagination" data-aos="fade-up">
+        <ul class="justify-content-center">
+          {% if news.has_previous %}
+          <li><a href="?page={{news.previous_page_number}}"><i class="icofont-rounded-left"></i></a></li>
+          <li><a href="?page={{news.previous_page_number}}">{{news.previous_page_number}}</a></li>
+          {% endif %}
+          
+          <li class="active"><a href="#">{{news.number}}</a></li>
+          
+          {% if news.has_next %}
+          <li><a href="?page={{news.next_page_number}}">{{news.next_page_number}}</a></li>
+          <li><a href="?page={{news.next_page_number}}"><i class="icofont-rounded-right"></i></a></li>
+          {% endif  %}
+        </ul>
+      </div>
+
+    </div>
+  </section><!-- End Blog Section -->
+
+
+  {% endblock body %}

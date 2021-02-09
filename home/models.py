@@ -1,4 +1,7 @@
 from django.db import models
+from ckeditor.fields import RichTextField
+from datetime import datetime, date
+from django.urls import reverse
 
 # Create your models here.
 class Message(models.Model):
@@ -38,6 +41,31 @@ class Team(models.Model):
         return self.name
 
 
+class News(models.Model):
+    STATUS=(
+        ('True','True'),
+        ('False','False'),
+    )
+    title=models.CharField(max_length=225)
+    image=models.ImageField(null=True,blank=True,upload_to='images/')
+    defination=models.CharField(max_length=300)
+    details=RichTextField(blank=True,null=True)
+    status=models.CharField(max_length=10,choices=STATUS)
+    slug=models.SlugField(null=False,unique=True)
+    create_at=models.DateTimeField(auto_now_add=True)
+    update_at=models.DateTimeField(auto_now=True)
+    upcoming_date=models.DateField(auto_now_add=False,auto_now=False,blank=True)
+
+
+    def __str__(self):
+        return self.title
+
+       
+
+
+
+
+
 
 
 class Testimonials(models.Model):
@@ -53,6 +81,7 @@ class Testimonials(models.Model):
 class Ceategory(models.Model):
     category=models.CharField(max_length=225)
     description=models.CharField(max_length=400)
+    icon=models.CharField(max_length=50,null=True,blank=True)
 
 
     def __str__(self):
@@ -62,7 +91,7 @@ class Ceategory(models.Model):
 class ServiceProduct(models.Model):
     category= models.ForeignKey(Ceategory,on_delete=models.CASCADE)
     productname=models.CharField(max_length=255)
-    productdescription=models.CharField(max_length=900)
+    productdescription=models.CharField(max_length=2000)
     productimage=models.ImageField(null=True,blank=True,upload_to='images/')
 
 

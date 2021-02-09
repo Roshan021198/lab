@@ -1,4 +1,4 @@
-body {
+.body {
     margin: 0;
     padding: 0;
     
@@ -6,7 +6,7 @@ body {
     color: #313030;
   }
 .news{
-    width: 100%;
+    width: auto;
     height: 130vh;
     background:  #ffcbba;
     background-size: cover;
@@ -145,6 +145,9 @@ body {
         background:  #ffcbba;
 
     }
+    .exploremore{
+        position: relative;
+    }
     .news .new-leftBox{
         width: 100%;
         height: auto;
@@ -212,5 +215,13 @@ body {
 
     transform: translateY(0px);
     opacity: 1;
+}
+
+@media (min-width:1024px){
+    .exploremore{
+        position: relative;
+        bottom: 30rem;
+        left: 3.5rem;
+    }
 }
 
