@@ -1,0 +1,86 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.body{
+    font-family: "Open Sans", sans-serif;
+    font-size: 1rem;
+    background: #fff9f7 ;
+}
+a{
+    color: #ff5821;
+    text-decoration: none;
+}
+
+.service-header{
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+}
+.service-header h1{
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    line-height: 1.2;
+    font-weight: 600;
+}
+.service-header h1 span{
+    color: #ff5821;
+}
+.service-header p{
+    font-size: 2rem;
+}
+.machine-photo{
+    width: 100%;
+}
+.machine-card{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 2rem;
+    background: #fff;
+    margin-bottom: 2rem;
+
+}
+.machine-card .cate{
+    margin-bottom: 2rem;
+    color:#ff5821;
+    
+}
+.machine-card img{
+    height: 400px;
+}
+
+.machine-card > div{
+    padding: 2rem;
+}
+.machine-card:nth-child(even) img{
+    order: 2;
+}
+.machine-btn{
+    display: inline-block;
+    background: #ff5821;
+    color: #fff;
+    padding: 0.8rem 1.8rem;
+    margin-top: 2rem;
+    cursor: pointer;
+}
+.machine-btn:hover{
+    opacity: 0.8;
+    color: #fff;
+    text-decoration: none;
+}
+.text{
+    font-size:3rem;
+    font-weight:600;
+}
+
+@media(max-width:700px){
+    .machine-card{
+        display: block;
+    }
+
+}
