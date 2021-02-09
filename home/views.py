@@ -6,7 +6,6 @@ from .models import Gallery,Team,Testimonials,ServiceProduct,Ceategory,News
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 def contact_message(request):
-    print("helllll")
     if request.method == 'POST':
         name = request.POST['name']
         email = request.POST['email']
