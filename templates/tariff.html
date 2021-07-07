@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+{% load static%}
+
+
+
+<section>
+    <div class="container">
+        <center><h3 class="section-head" style="font-weight: bold;">Tariff Chart</h3></center>
+        <div class="table-responsive-lg">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">SLNO.</th>
+                        <th scope="col">MACHINE</th>
+                        <th scope="col">WORKING</th>
+                        <th scope="col" colspan="2" style="text-align: center;">TARIFF</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for t in tariffs %}
+                    <tr>
+                        <th scope="row">{{forloop.counter}}</th>
+                        <td><span id="machine{{t.pk}}" >{{t.machine}}</span></td>
+                    <td><span id="working{{t.pk}}" >{{t.working}}</span></td>
+                    <td><span id="working{{t.pk}}" >{{t.tariff}}</span></td>
+                    <td><span id="tariff{{t.pk}}" >{{t.tariff_per_hr}}</span></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<div class="container">
+    <h3> <b>How To Book Working Slot</b></h3>
+    <div class="container ml-2">
+        <ul>
+            <li> For booking contact : <b>Mr Amit Yadav (ph. +91-9519319090)</b></li>
+            <li> For other queries contact : <b>Mr Manas Samantaray (ph. +91-8328946771)</b></li>
+        </ul>
+    </div>
+</div>
+
+
+{% endblock %}

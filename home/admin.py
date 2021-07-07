@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Gallery,Team,Testimonials,Ceategory,ServiceProduct,Message,News
+from .models import Gallery,Team,Testimonials,Ceategory,ServiceProduct,Message,News,TariffChart
 
 
 # Register your models he
@@ -23,3 +23,4 @@ admin.site.register(Ceategory)
 admin.site.register(ServiceProduct,ServiceProductAdmin)
 admin.site.register(Message)
 admin.site.register(News)
+admin.site.register(TariffChart)

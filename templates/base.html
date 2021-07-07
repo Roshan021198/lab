@@ -1,147 +1,227 @@
 <!DOCTYPE html>
 <html lang="en">
-    {% load static%}
+{% load static%}
 
-    <head>
-        <meta charset="utf-8">
-        <meta content="width=device-width, initial-scale=1.0" name="viewport">
-      
-        <title>Welcome to Fablab AIC-NITF</title>
-        <meta content="" name="description">
-        <meta content="" name="keywords">
-      
-        <!-- Favicons -->
-        <link href="{% static 'assets/img/fablablogo.png' %}" rel="icon">
-        <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
-        <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
-      
-        <!-- Google Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-      
-        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet"/>
-        <!-- Vendor CSS Files -->
-        <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
-        <link href="{% static 'assets/vendor/icofont/icofont.min.css' %}" rel="stylesheet">
-        <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
-        <link href="{% static 'assets/vendor/venobox/venobox.css' %}" rel="stylesheet">
-        <link href="{% static 'assets/vendor/owl.carousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
-        <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
-        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-      
-        <!-- Template Main CSS File -->
-        <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
-        <link href="{% static 'assets/css/news.css' %}" rel="stylesheet">
-        <link href="{% static 'assets/css/gallery.css' %}" rel="stylesheet">
-        <link href="{% static 'assets/css/about.css' %}" rel="stylesheet">
-        <link href="{% static 'assets/css/machine.css' %}" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-       
-        <style>
-          .carousel {
-            margin: 30px 0;
-              background: #ccc;
-              position: relative;
-              box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-          }
-          .carousel:after {
-            content: "";
-              position: absolute;
-              z-index: -1;
-              box-shadow: 0 0 20px rgba(0,0,0,0.8);
-              height: 60px;
-              bottom: 0px;
-              left: 10px;
-              right: 10px;
-              border-radius: 100px / 20px;
-          }
-          .carousel .item {
-              text-align: center;
-            overflow: hidden;
-              height: 475px;
-          }
-          .carousel .item img {
-            max-width: 100%;
-              margin: 0 auto; /* Align slide image horizontally center in Bootstrap v3 */
-          }
-          .carousel .carousel-control {
-            width: 50px;
-              height: 50px;
-              background: #000;
-              margin: auto 0;
-            opacity: 0.8;
-          }
-          .carousel .carousel-control:hover {
-            opacity: 0.9;
-          }
-          .carousel .carousel-control i {
-              font-size: 41px;
-          }
-          .carousel-action {
-            padding: 10px 0 30px;
-          }
-          .carousel-action .btn {
-            min-height: 34px;
-            border-radius: 0;
-            margin: 3px;
-            min-width: 150px;
-            text-transform: uppercase;
-            font-family: 'Oswald', sans-serif;
-          }
-          .carousel-action .btn-primary {
-            border-color: #000;
-            background: none;
-            color: #000;
-          }
-          .carousel-action .btn-primary:hover {
-            background: #000;
-            color: #fff;
-          }
-          .carousel-action .btn-success {
-            background: #8fc93c;
-            border: none;
-          }
-          .carousel-action .btn-success:hover {
-            background: #87bd35;
-          }
-          .carousel-indicators li, .carousel-indicators li.active {
-            width: 11px;
-            height: 11px;
-            border-radius: 50%;
-            margin: 1px 6px;
-          }
-          .carousel-indicators li {
-            background: transparent;
-            border: 1px solid #fff;
-          }
-          .carousel-indicators li.active {
-            background: #8fc93c;
-            border-color: #8fc93c;
-          }
-          </style>
-        <!-- =======================================================
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Welcome to Fablab AIC-NITF</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{% static 'assets/img/fablablogo.png' %}" rel="icon">
+  <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+
+  <!-- Google Fonts -->
+  <!-- <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet"> -->
+
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/icofont/icofont.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/venobox/venobox.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/owl.carousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/css/news.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/css/gallery.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/css/about.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/css/machine.css' %}" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+  <style>
+    /* .carousel {
+      margin: 30px 0;
+      background: #fff;
+      position: relative;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    } */
+
+    .carousel:after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+      height: 60px;
+      bottom: 0px;
+      left: 10px;
+      right: 10px;
+      border-radius: 100px / 20px;
+    }
+
+    .carousel .item {
+      text-align: center;
+      overflow: hidden;
+      height: 475px;
+    }
+
+    .carousel .item img {
+      max-width: 100%;
+      margin: 0 auto;
+      /* Align slide image horizontally center in Bootstrap v3 */
+    }
+
+    .carousel .carousel-control {
+      width: 50px;
+      height: 50px;
+      background: #000;
+      margin: auto 0;
+      opacity: 0.8;
+    }
+
+    .carousel .carousel-control:hover {
+      opacity: 0.9;
+    }
+
+    .carousel .carousel-control i {
+      font-size: 41px;
+    }
+
+    .carousel-action {
+      padding: 10px 0 30px;
+    }
+
+    .carousel-action .btn {
+      min-height: 34px;
+      border-radius: 0;
+      margin: 3px;
+      min-width: 150px;
+      text-transform: uppercase;
+      font-family: 'Oswald', sans-serif;
+    }
+
+    .carousel-action .btn-primary {
+      border-color: #000;
+      background: none;
+      color: #000;
+    }
+
+    .carousel-action .btn-primary:hover {
+      background: #000;
+      color: #fff;
+    }
+
+    .carousel-action .btn-success {
+      background: #8fc93c;
+      border: none;
+    }
+
+    .carousel-action .btn-success:hover {
+      background: #87bd35;
+    }
+
+    .carousel-indicators li,
+    .carousel-indicators li.active {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      margin: 1px 6px;
+    }
+
+    .carousel-indicators li {
+      background: transparent;
+      border: 1px solid #fff;
+    }
+
+    .carousel-indicators li.active {
+      background: #8fc93c;
+      border-color: #8fc93c;
+    }
+
+    .text-red {
+      color: #FF6B3B !important;
+    }
+
+    .text-pink {
+      color: #FF6B3B !important;
+    }
+
+    .news-feed-heading {
+      font-size: 2.5rem !important;
+    }
+
+    .news-heading-intro {
+      font-size: 1.25rem !important;
+    }
+
+    .text-black {
+      color: #000 !important;
+    }
+
+    .fullbar-item:hover {
+      background: #f6f6f6;
+    }
+
+    thead th {
+      background-color: #39312F;
+      color: white;
+    }
+
+    thead td {
+      color: #39312F;
+    }
+
+    div.news_event {
+      margin: 4px, 4px;
+      padding: 4px;
+      height: 500px;
+      overflow-x: hidden;
+      overflow-y: auto;
+      text-align: justify;
+    }
+
+    @media screen and (max-width: 768px) {
+      .in-news {
+        font-size: 1.5rem !important;
+      }
+
+      .news-feed-heading {
+        font-size: 1.75rem !important;
+      }
+
+      .feed-item-heading {
+        font-size: 1.25rem !important;
+      }
+
+      .news-heading-intro {
+        font-size: 1rem !important;
+      }
+    }
+  </style>
+  <!-- =======================================================
         * Template Name: Flexor - v2.4.0
         * Template URL: https://bootstrapmade.com/flexor-free-multipurpose-bootstrap-template/
         * Author: BootstrapMade.com
         * License: https://bootstrapmade.com/license/
         ======================================================== -->
-      </head>
+</head>
 
-<body >
-      <!-- ======= Top Bar ======= -->
+<body>
+  <!-- ======= Top Bar ======= -->
   <section id="topbar" class="d-none d-lg-block">
     <div class="container d-flex">
       <div class="contact-info mr-auto">
         <ul>
-          <li><i class="icofont-envelope"></i><a href="mailto:contact@example.com">incmgr@aicnalanda.com</a></li>
-          <li><i class="icofont-phone"></i>+91-8249585065</li>
+          <li><i class="icofont-envelope"></i><a href="mailto:contact@example.com">prog@aicnalanda.com</a></li>
+          <li><i class="icofont-phone"></i>+91-8328946771</li>
           <li><i class="icofont-clock-time icofont-flip-horizontal"></i> Mon-Sat 10am - 5pm</li>
         </ul>
 
       </div>
       <div class="cta">
-        <a href="#about" class="scrollto">Booking Now</a>
+        <a href="{% url 'booking' %}" class="scrollto">Booking Now</a>
       </div>
     </div>
   </section>
@@ -153,18 +233,19 @@
       <div class="logo mr-auto">
         <!-- <img src="{% static 'assets/img/logofab.png' %}" style="width:210px; height: 210px;"> -->
         <!-- Uncomment below if you prefer to use an image logo -->
-        <a href="www.fabslab.xyz"><img src="{% static 'assets/img/logofab.png' %}" style=" height: 200px;" alt="" class="img-fluid"></a>
+        <a href="{% url 'index' %}"><img src="{% static 'assets/img/logofab.png' %}" style=" height: 200px;" alt=""
+            class="img-fluid"></a>
       </div>
 
       <nav class="nav-menu d-none d-lg-block">
         <ul>
-          
+
           <li class="active"><a href="{% url 'index' %}">Home</a></li>
           <li><a href="{% url 'about' %}">About</a></li>
           <li><a href="/#services">Services</a></li>
           <li><a href="/#event">Events</a></li>
-          <li><a href="/#new-gallery">Gallery</a></li>
-          <li><a href="/#booking">Booking</a></li>
+          <li><a href="{% url 'gallery' %}">Gallery</a></li>
+          <li><a href="{% url 'booking' %}">Booking</a></li>
           <li><a href="/#footer">Contact</a></li>
 
         </ul>
@@ -175,65 +256,71 @@
   {% block body %}
 
   {% endblock %}
-    <!-- ======= Footer ======= -->
-    <footer id="footer">
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
 
-        <div class="footer-top">
-          <div class="container">
-            <div class="row">
-    
-              <div class="col-lg-4 col-md-6 footer-contact">
-                <h3><img src="{% static 'assets/img/fablablogo.png' %}" style="height: 50px; widows: 50%;"></h3>
-                <p>
-                  AIC-Nalanda Institute Of Technology Foundation,<br>
-                  Buddhist Villa, Chandaka Bhubaneswar,<br>
-                  Odisha-754005<br>
-                  <strong>Phone:</strong> +91-8249585065<br>
-                  <strong>Email:</strong> incmgr@aicnalanda.com<br>
-                </p>
-              </div>
-    
-              <div class="col-lg-4 col-md-6 footer-links">
-                <h4>Useful Links</h4>
-                <ul>
-                  <li><i class="bx bx-chevron-right"></i> <a href="{% url 'index' %}">Home</a></li>
-                  <li><i class="bx bx-chevron-right"></i> <a href="{% url 'about' %}">About us</a></li>
-                  <li><i class="bx bx-chevron-right"></i> <a href="/#services">Services</a></li>
-                  <li><i class="bx bx-chevron-right"></i> <a href="#">Boocking</a></li>
-                </ul>
-              </div>
-    
-              <div class="col-lg-4 col-md-6 footer-links">
-                <h4>Our Services</h4>
-                <ul>
-                  {% for rs in ceategory%}
-                  <li><i class="bx bx-chevron-right"></i> <a href="{% url 'service' id=rs.id %}">{{rs.category}}</a></li>
-                  {% endfor %}
-                </ul>
-              </div>
-            </div>
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6 footer-contact">
+            <h3><img src="{% static 'assets/img/fablablogo.png' %}" style="height: 50px; widows: 50%;"></h3>
+            <p>
+              AIC-Nalanda Institute Of Technology Foundation,<br>
+              Buddhist Villa, Chandaka Bhubaneswar,<br>
+              Odisha-754005<br>
+              <strong>Phone:</strong> +91-8328946771<br>
+              <strong>Email:</strong> prog@aicnalanda.com<br>
+            </p>
+          </div>
+
+          <div class="col-lg-4 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'index' %}">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'about' %}">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/#services">Services</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'booking' %}">Booking</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4 col-md-6 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              {% for rs in ceategory%}
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'service' id=rs.id %}">{{rs.category}}</a></li>
+              {% endfor %}
+            </ul>
           </div>
         </div>
-    
-        <div class="container d-lg-flex py-4">
-    
-          <div class="mr-lg-auto text-center text-lg-left">
-            <div class="copyright">
-              &copy;<strong><span>2020</span></strong>. All Rights Reserved By<a href="https://aicnalanda.com/"> NIT</a>
-            </div>
-          </div>
-          <div class="social-links text-center text-lg-right pt-3 pt-lg-0">
-            <a href="https://twitter.com/AtalNit" class="twitter"><i class="bx bxl-twitter"></i></a>
-            <a href="https://www.facebook.com/aicnalanda/" class="facebook"><i class="bx bxl-facebook"></i></a>
-            <a href="https://www.instagram.com/aicnalanda/" class="instagram"><i class="bx bxl-instagram"></i></a>
-            <a href="https://www.linkedin.com/company/aic-nalanda-institute-of-technology-foundation/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-          </div>
+      </div>
+    </div>
+
+    <div class="container d-lg-flex py-4">
+
+      <div class="mr-lg-auto text-center text-lg-left">
+        <div class="copyright">
+          &copy;<strong><span>2021</span></strong>. All Rights Reserved By<a href="https://aicnalanda.com/"
+            style="color: #FF6B3B;"> AIC-NITF</a>
         </div>
-      </footer><!-- End Footer -->
-      
-      <script src="//code.tidio.co/9wrewkybmcqbbfjh0dgmmvlezupejhxz.js" async></script>
- 
-      <!-- <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a> -->
+      </div>
+      <div class="social-links text-center text-lg-right pt-3 pt-lg-0">
+        <a href="https://twitter.com/AtalNit" target="_blank" class="twitter"><i class="bx bxl-twitter"></i></a>
+        <a href="https://www.facebook.com/aicnalanda/" target="_blank" class="facebook"><i
+            class="bx bxl-facebook"></i></a>
+        <a href="https://www.instagram.com/aicnalanda/" target="_blank" class="instagram"><i
+            class="bx bxl-instagram"></i></a>
+        <a href="https://www.linkedin.com/company/aic-nalanda-institute-of-technology-foundation/" target="_blank"
+          class="linkedin"><i class="bx bxl-linkedin"></i></a>
+        <a href="https://www.youtube.com/channel/UCvhudzdbhdEH0duQnhkrLJg" target="_blank" class="youtube"><i
+            class="bx bxl-youtube"></i></a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <script src="//code.tidio.co/pigidgl3qksp685o4zdqaffrhsdfmxqd.js" async></script>
+
+  <!-- <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a> -->
 
   <!-- Vendor JS Files -->
   <script src="{% static 'assets/vendor/jquery/jquery.min.js' %}"></script>
@@ -253,13 +340,17 @@
   <!-- <script src="{% static 'assets/js/gellery.js' %}"></script> -->
   <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+    crossorigin="anonymous"></script>
   <script>
     AOS.init();
   </script>
-  
+
 
 </body>
-  
-  </html>
+
+</html>

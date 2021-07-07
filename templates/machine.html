@@ -8,7 +8,7 @@
     <section class="body">
         <header class="service-header">
         <h1 class="text1"><span class="text">{{ct}}</span> Services</h1>
-        <p style="font-size: medium;">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi, aliquid.</p>
+        
         </header>
 
         <main class="container">
@@ -17,10 +17,11 @@
                 <img src="{{prod.productimage.url}}" class="machine-photo" style="background-size :100%; height:550px; width:400px; margin-left:50px;">
                 <div style="margin-left:2rem">
                     <h3 class="cate">{{prod.productname}}</h3>
-                    <P>
-                        {{prod.productdescription}}
-                    </P>
-                    <a href="#" class="machine-btn">BOOK NOW</a>
+                    <div>
+                        {{prod.description|safe}}
+                    </div>
+                    
+                    <a href="{% url 'booking' %}" class="machine-btn">BOOK NOW</a>
                 </div>
 
             </section>
@@ -29,4 +30,6 @@
         </main>
 
     </section>
+
+    
     {% endblock body %}

@@ -15,7 +15,7 @@
   <div class="container" data-aos="fade-in">
     <h1 style="display: inline-block;">Welcome to <span class="typewrite" data-period="1800"
         data-type='[ " FabLab", " AIC-NITF"]'></span> </h1>
-    <h2>We are team of talanted designers making websites with Bootstrap</h2>
+    <h2>Defining Creativity. Designing Innovation</h2>
     <!-- <div class="d-flex align-items-center">
         <i class="bx bxs-right-arrow-alt get-started-icon"></i>
         <a href="{% url 'about' %}" class="btn-get-started scrollto">Get Started</a>
@@ -55,29 +55,31 @@
   </section><!-- End About Section -->
 
   <!-- ======= Clients Section ======= -->
-  <section id="clients" class="clients">
+  <!-- <section id="clients" class="clients">
     <div class="container" data-aos="fade-up">
 
       <div class="owl-carousel clients-carousel">
       </div>
 
     </div>
-  </section><!-- End Clients Section -->
+  </section> -->
+  <!-- End Clients Section -->
 
   <!-- ======= Services Section ======= -->
 
-
-  <section class="news container" id='event'>
-
-    <div class="new-leftBox">
-      <div class="new-content">
-        <h1>Events and News</h1>
-        <!-- <p>A Fabrication Laboratory (FabLab) is a technical prototyping
+  <!-- <p>A Fabrication Laboratory (FabLab) is a technical prototyping
         platform where people can design and build their own technology.
         They began as began as an outreach program from MIT‘s Center for Bits and Atoms (CBA).
         Fab labs aim to provide stimulus for local entrepreneurship
         and serves as a platform for learning and innovation.
       </p> -->
+
+  <!-- <section class="news container" id='event'>
+
+    <div class="new-leftBox">
+      <div class="new-content">
+        <h1>Events and News</h1>
+        
       </div>
 
     </div>
@@ -105,18 +107,67 @@
       </div>
     </div>
     <a href="{% url 'blog' %}" class="machine-btn exploremore">Explore More</a>
-  </section><!-- End Values Section -->
+  </section> -->
+  <!-- End Values Section -->
 
-  <section id="clients" class="clients">
+  <!--##############################################################################-->
+{% if news %}
+  <section id="event" class="clients">
+    <div class="container">
+      <div class="section-title container">
+        <h2 data-aos="fade-up">News And Event</h2>
+        <!-- <p  style="font-size: medium;" data-aos="fade-up">Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p> -->
+      </div>
+
+      <div class="container news_event">
+        <div class="row">
+          <div class="col-md-12">
+            {% for rs in news %}
+            <div class="fullbar-item w-100 cursor-pointer">
+              <div class="container">
+                <div class="row py-3 py-md-5 align-items-center border-top">
+                  <div class="col-md-10">
+                    <h3 class="feed-item-heading  m-0 font-weight-800">
+                      <a class="text-black" href="{% url 'singleblog' id=rs.id %}">{{rs.title}}</a>
+                      <p class="news-heading-intro h4 font-italic pt-3 font-weight-normal">{{rs.details|striptags|truncatechars:100}}</p>
+                    </h3>
+                  </div>
+                  <div class="col-md-2">
+                    <p class="m-0 text-pink text-uppercase" style="color: #FF6B3B;">{{rs.upcoming_date}}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+
+            
+            
+            
+          </div>
+          
+        </div>
+        
+      </div>
+      <a class="btn btn-primary text-white mt-3" style="background-color: #FF6B3B; border: none;" href="{% url 'blog' %}">Explore More</a>
+
+
+  </section>
+  {% endif %}
+
+
+<!--############################################################################-->
+  <!-- <section id="clients" class="clients">
     <div class="container" data-aos="fade-up">
 
       <div class="owl-carousel clients-carousel">
       </div>
 
     </div>
-    {% if testimonials %}
-  </section><!-- End Clients Section -->
-
+    
+  </section> -->
+  
+  <!-- End Clients Section -->
+  {% if testimonials %}
   <!-- ======= Testimonials Section ======= -->
   <section id="testimonials" class="testimonials">
     <div class="container" data-aos="fade-up">
@@ -143,20 +194,20 @@
   </section><!-- End Testimonials Section -->
   {% endif %}
 
-{% if gallery %}
-  <!-- ======= Portfolio Section ======= -->
+<!-- {% if gallery %}
+  
   <section id="new-gallery" class="new-gallery">
     <div class="container">
       <div class="section-title container">
         <h2 data-aos="fade-up">Gallery</h2>
-        <!-- <p  style="font-size: medium;" data-aos="fade-up">Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p> -->
+        
       </div>
 
       <div class="container">
         <div class="row">
           <div class="col-md-12">
             <div id="myCarousel" class="carousel slide" data-ride="carousel">
-              <!-- Carousel indicators -->
+              
               <ol class="carousel-indicators">
                 {% for gal in gallery %}
                 {% if forloop.first %}
@@ -166,7 +217,7 @@
                 {% endif %}
                 {% endfor %}
               </ol>
-              <!-- Wrapper for carousel items -->
+              
               <div class="carousel-inner">
                 {% for gal in gallery %}
                 {% if forloop.first %}
@@ -180,7 +231,7 @@
                 {% endif %}
                 {% endfor %}
               </div>
-              <!-- Carousel controls -->
+         
               <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
                 <i class="fa fa-angle-left"></i>
               </a>
@@ -194,8 +245,8 @@
       </script>
 
 
-  </section><!-- End Portfolio Section -->
-  {% endif %}
+  </section>
+  {% endif %} -->
 
   <!-- ======= Team Section ======= -->
   <section id="team" class="team section-bg">
@@ -213,10 +264,10 @@
             <div class="member-img">
               <img src="{{rs.image.url}}" class="img-fluid" alt="">
               <div class="social">
-                <a href="{{rs.twiterlink}}"><i class="icofont-twitter"></i></a>
-                <a href="{{rs.facebooklink}}"><i class="icofont-facebook"></i></a>
-                <a href="{{rs.instalink}}"><i class="icofont-instagram"></i></a>
-                <a href="{{rs.linkdnlink}}"><i class="icofont-linkedin"></i></a>
+                <a href="{{rs.twiterlink}}" target="_blank"><i class="icofont-twitter"></i></a>
+                <a href="{{rs.facebooklink}}" target="_blank"><i class="icofont-facebook"></i></a>
+                <a href="{{rs.instalink}}" target="_blank"><i class="icofont-instagram"></i></a>
+                <a href="{{rs.linkdnlink}}" target="_blank"><i class="icofont-linkedin"></i></a>
               </div>
             </div>
             <div class="member-info">

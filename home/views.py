@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from .models import Message
-from .models import Gallery,Team,Testimonials,ServiceProduct,Ceategory,News
+from .models import Gallery,Team,Testimonials,ServiceProduct,Ceategory,News,TariffChart
 
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
@@ -78,3 +78,16 @@ def blog(request):
         'news':news ,
     } 
     return render(request,'blog.html',prms)    
+
+
+def booking(request):
+    ceategory=Ceategory.objects.all()
+    tariff_obj = TariffChart.objects.all()
+    return render(request,'tariff.html',{'tariffs':tariff_obj,'ceategory':ceategory})
+
+
+def gallery(request):
+    #tariff_obj = TariffChart.objects.all()
+    gallery=Gallery.objects.all()
+    ceategory=Ceategory.objects.all()
+    return render(request,'gallery.html',{'gallery':gallery,'ceategory':ceategory})

@@ -10,5 +10,7 @@ urlpatterns = [
     path('service/<int:id>/',views.service,name='service'),
     path('singleblog/<int:id>/',views.singleblog,name='singleblog'),
     path('blog/',views.blog,name='blog'),
+    path('booking/',views.booking,name='booking'),
+    path('gallery/',views.gallery,name='gallery'),
     
 ]
