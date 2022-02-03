@@ -77,6 +77,7 @@ def blog(request):
         'ceategory':ceategory,
         'news':news ,
     } 
+    print(ceategory,news,"======================")
     return render(request,'blog.html',prms)    
 
 
